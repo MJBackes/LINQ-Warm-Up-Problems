@@ -8,13 +8,13 @@ namespace LINQ_Warm_Up_Problems
 {
     public static class LetterFreq
     {
-        public static string SortAlphabetically(string input)
+        private static string SortAlphabetically(string input)
         {
             char[] letters = input.ToUpper().ToCharArray();
             letters = letters.OrderBy(c => c).ToArray();
             return ArrayToString(letters);
         }
-        public static List<int> GroupByLetter(string input)
+        private static List<int> GroupByLetter(string input)
         {
             List<int> letterCount = new List<int>();
             var groupedItem = input.GroupBy(i => i).ToList();
@@ -37,13 +37,13 @@ namespace LINQ_Warm_Up_Problems
             }
             return output.ToString();
         }
-        public static string ArrayToString(char[] input)
+        private static string ArrayToString(char[] input)
         {
             StringBuilder output = new StringBuilder("");
             foreach(char c in input) { output.Append(c); }
             return output.ToString();
         }
-        public static char[] RemoveDupes(string input)
+        private static char[] RemoveDupes(string input)
         {
             return input.ToCharArray().Distinct().ToArray();
         }

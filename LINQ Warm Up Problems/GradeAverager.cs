@@ -16,13 +16,13 @@ namespace LINQ_Warm_Up_Problems
             lowestRemoved.ForEach(s => averages.Add(AverageStringArray(s)));
             return double.Parse(AverageStringArray(averages.ToArray()));
         }
-        public static string[] OrderGrades(string input)
+        private static string[] OrderGrades(string input)
         {
             var output = input.Split(',').OrderBy(i => int.Parse(i)).ToList();
             output.RemoveAt(0);
             return output.ToArray();
         }
-        public static string AverageStringArray(string[] input)
+        private static string AverageStringArray(string[] input)
         {
             double output = 0;
             foreach(string s in input)
