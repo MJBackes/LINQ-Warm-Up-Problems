@@ -11,23 +11,19 @@ namespace LINQ_Warm_Up_Problems
         private static List<string> GroupByLetter(string input)
         {
             List<string> letterCount = new List<string>();
-            var groupedItem = input.ToUpper().GroupBy(i => i).OrderBy(i => i.Key).ToList();
-            foreach (var i in groupedItem) {
+            var groupedItem = 
+            input.ToUpper().GroupBy(i => i).OrderBy(i => i.Key).ToList();
+            foreach (var i in groupedItem)
+            {
                 letterCount.Add(i.Key.ToString());
                 letterCount.Add(i.Count().ToString());
-                    }
+            }
             return letterCount;
         }
         public static string CompressString(string input)
         {
             List<string> letterCount = GroupByLetter(input);
-            return ArrayToString(letterCount.ToArray());
-        }
-        private static string ArrayToString(string[] input)
-        {
-            StringBuilder output = new StringBuilder("");
-            foreach(string s in input) { output.Append(s); }
-            return output.ToString();
+            return String.Join("",letterCount.ToArray());
         }
     }
 }
