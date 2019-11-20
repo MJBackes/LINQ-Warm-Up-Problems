@@ -10,6 +10,8 @@ namespace LINQ_Warm_Up_Problems
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(LetterFreq.CompressString("aAabbcaaAbbC"));
+            Console.ReadLine();
         }
     }
 }
